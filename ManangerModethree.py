@@ -5,9 +5,9 @@ import json
 import os.path
 from os import path
 
-Worker1_IP = 'http://140.92.152.88:1234'
-Worker2_IP = 'http://140.92.152.72:1234'
-Worker3_IP = 'http://140.92.152.63:1234'
+Worker1_IP = ''
+Worker2_IP = ''
+Worker3_IP = ''
 
 Count=1
 while Count!=int(0):
