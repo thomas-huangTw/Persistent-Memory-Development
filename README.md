@@ -11,7 +11,7 @@ Python 3.6.9
     pip install Flask
     ```
 # User Mode example
-_ _running Usermode.py
+_running Usermode.py_  
 (a)Create and mount memery(Scanf 0)  
 - Define and create the size of ndctl create-namespace -m fsdax  
 - Define and create the folder which you need to mount on create-namespace  
@@ -34,7 +34,7 @@ _ _running Usermode.py
 - Exit the program
 
 #  Manager Mode example
-_ _running ManagerMode.py  
+_running ManagerMode.py_  
 (a),(b)Just list the User Mode(a),(b)  
 
 (c)Show Block Device  
