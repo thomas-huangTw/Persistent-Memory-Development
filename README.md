@@ -13,7 +13,7 @@ Python 3.6.9
 # User Mode example
 ***running Usermode.py***  
 (a)Create and mount memery(Scanf 0)  
-`Input : Folder name and size you need`  
+`Input : Folder name and size you need`
 - Define and create the size of ndctl create-namespace -m fsdax  
 - Define and create the folder which you need to mount on create-namespace  
 - mkfs.xfs the create-namespace “blockdev”
@@ -24,15 +24,15 @@ Python 3.6.9
 - Destroy-namespace by “uuid” that you insert
 
 (c)Show Block Device(Scanf 2)  
-`The “uuid” pmem block which you want to list`  
+`The “uuid” pmem block which you want to list`
 - ndctl list namespace by “uuid” that you insert
 
 (d)Backup(Scanf 3)  
-`The “uuid” pmem block which you want to backup`  
+`The “uuid” pmem block which you want to backup`
 - Dump xfs to a local host by “uuid” that you insert
 
 (e)Restore(Scanf 4)  
-`The “uuid” pmem block which you want to restore`  
+`The “uuid” pmem block which you want to restore`
 - Restore xfs to a local host by “uuid” that you insert
 
 (f)Exit(Scanf 5)  
