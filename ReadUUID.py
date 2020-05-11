@@ -12,9 +12,9 @@ def run():
         obj = json.loads(data)
         print(obj)
     except OSError as e:
-        Worker1_IP = '140.92.152.88'
-        Worker2_IP = '140.92.152.61'
-        Worker3_IP = '140.92.152.63'
+        Worker1_IP = ''
+        Worker2_IP = ''
+        Worker3_IP = ''
 
         IP = get_host_ip()
         if str(IP) == Worker1_IP:
