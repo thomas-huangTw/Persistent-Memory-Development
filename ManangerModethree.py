@@ -101,8 +101,11 @@ while(1):
         print("Workers UUID don't exist.\n")
 
     if str(mode_chose)==str("2"):
+        #Print pmem list availcapacity
         ModeTwoChose = input("Please enter your required items: 1.pmem list availcapacity.; 2.pmem list blkdev.\nItem selection:")
         if ModeTwoChose=="1":
+            
+            #try to post Worker1 /availcapacity api
             try:
                 WorkerOneAvailcapacity = requests.post(Worker1_IP + '/availcapacity')
                 if WorkerOneAvailcapacity.text == "":
@@ -111,7 +114,8 @@ while(1):
                     print("Worker1:\n"+WorkerOneAvailcapacity.text)
             except:
                 print("Worker1 error.\n")
-            
+                
+            #try to post Worker2 /availcapacity api
             try:
                 WorkerTwoAvailcapacity = requests.post(Worker2_IP + '/availcapacity')
                 if WorkerTwoAvailcapacity.text=="":
@@ -120,7 +124,8 @@ while(1):
                     print("Worker2:\n"+WorkerTwoAvailcapacity.text)
             except:
                 print("Worker2 error.\n")
-            
+                
+            #try to post Worker3 /availcapacity api
             try:
                 WorkerThreeAvailcapacity = requests.post(Worker3_IP + '/availcapacity')
                 if WorkerThreeAvailcapacity.text=="":
@@ -130,8 +135,10 @@ while(1):
             except:
                 print("Worker3 error.\n")
                 
-
+        #Print 2.pmem list blkdev
         elif ModeTwoChose=="2":
+            
+            #try to post Worker1 /blkdev api
             try:
                 WorkerOneBlkdev = requests.post(Worker1_IP + '/blkdev')
                 if WorkerOneBlkdev.text=="":
@@ -140,7 +147,8 @@ while(1):
                     print("Worker1:\n"+WorkerOneBlkdev.text)
             except:
                 print("Worker1 None.\n")
-
+            
+            #try to post Worker2 /blkdev api
             try:
                 WorkerTwoBlkdev = requests.post(Worker2_IP + '/blkdev')
                 if WorkerTwoBlkdev.text=="":
@@ -149,7 +157,8 @@ while(1):
                     print("Worker2:\n"+WorkerTwoBlkdev.text)
             except:
                 print("Worker2 None.\n")
-            
+                
+            #try to post Worker3 /blkdev api
             try:
                 WorkerThreeBlkdev = requests.post(Worker3_IP + '/blkdev')
                 if WorkerThreeBlkdev.text=="":
