@@ -12,6 +12,6 @@ Python 3.6.9
     ```
 # User Mode example
 (a)Create and mount memery(Scanf 0)  
-＊ Define and create the size of ndctl create-namespace -m fsdax 
-＊ Define and create the folder which you need to mount on create-namespace
-＊ mkfs.xfs the create-namespace “blockdev” 
+- Define and create the size of ndctl create-namespace -m fsdax  
+- Define and create the folder which you need to mount on create-namespace  
+- mkfs.xfs the create-namespace “blockdev”  
