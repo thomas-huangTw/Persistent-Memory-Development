@@ -10,9 +10,9 @@ app = Flask(__name__)
 #Configure local ip
 def Check_Local_IP():
     LocalIp = get_host_ip()
-    if LocalIp =="":
+    if LocalIp =="140.92.152.88":
          Worker_IP = "Worker1"
-    elif LocalIp =="":
+    elif LocalIp =="140.92.152.61":
          Worker_IP = "Worker2"
     else:
          Worker_IP = "Worker3"
@@ -211,4 +211,4 @@ def DeleteBR():
 
 
 if __name__ == "__main__":
-    app.run(host='',port= , debug=True)
+    app.run(host='140.92.152.88',port=1234 , debug=True)

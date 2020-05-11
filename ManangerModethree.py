@@ -5,9 +5,9 @@ import json
 import os.path
 from os import path
 
-Worker1_IP = ''
-Worker2_IP = ''
-Worker3_IP = ''
+Worker1_IP = 'http://140.92.152.88:1234'
+Worker2_IP = 'http://140.92.152.61:1234'
+Worker3_IP = 'http://140.92.152.63:1234'
 
 while(1):
     """this while loop can classification 5 mode.
@@ -103,50 +103,61 @@ while(1):
     if str(mode_chose)==str("2"):
         ModeTwoChose = input("Please enter your required items: 1.pmem list availcapacity.; 2.pmem list blkdev.\nItem selection:")
         if ModeTwoChose=="1":
-            WorkerOneAvailcapacity = requests.post(Worker1_IP + '/availcapacity')
-            WorkerTwoAvailcapacity = requests.post(Worker2_IP + '/availcapacity')
-            WorkerThreeAvailcapacity = requests.post(Worker3_IP + '/availcapacity')
+            try:
+                WorkerOneAvailcapacity = requests.post(Worker1_IP + '/availcapacity')
+                if WorkerOneAvailcapacity.text == "":
+                    print("Worker1 None.")
+                else:
+                    print("Worker1:\n"+WorkerOneAvailcapacity.text)
+            except:
+                print("Worker1 error.\n")
             
-            if WorkerOneAvailcapacity=="":
-                print("None.")
-            else:
-                print("Worker1:\n"+WorkerOneAvailcapacity.text)
-            print("\n")
+            try:
+                WorkerTwoAvailcapacity = requests.post(Worker2_IP + '/availcapacity')
+                if WorkerTwoAvailcapacity.text=="":
+                    print("Worker2 None.")
+                else:
+                    print("Worker2:\n"+WorkerTwoAvailcapacity.text)
+            except:
+                print("Worker2 error.\n")
             
-            if WorkerTwoAvailcapacity=="":
-                print("None.")
-            else:
-                print("Worker2:\n"+WorkerTwoAvailcapacity.text)
-            print("\n")
-            
-            if WorkerThreeAvailcapacity=="":
-                print("None.")
-            else:
-                print("Worker3:\n"+WorkerThreeAvailcapacity.text)
-            print("\n")
-            
+            try:
+                WorkerThreeAvailcapacity = requests.post(Worker3_IP + '/availcapacity')
+                if WorkerThreeAvailcapacity.text=="":
+                    print("Worker3 None.")
+                else:
+                    print("Worker3:\n"+WorkerThreeAvailcapacity.text)
+            except:
+                print("Worker3 error.\n")
+                
+
         elif ModeTwoChose=="2":
-            WorkerOneBlkdev = requests.post(Worker1_IP + '/blkdev')
-            WorkerTwoBlkdev = requests.post(Worker2_IP + '/blkdev')
-            WorkerThreeBlkdev = requests.post(Worker3_IP + '/blkdev')
-            
-            if WorkerOneBlkdev.text=="":
-                print("Worker1: None.\n")
-            else:
-                print("Worker1:\n"+WorkerOneBlkdev.text+"\n")
-            print("\n")
-            
-            if WorkerTwoBlkdev.text=="":
+            try:
+                WorkerOneBlkdev = requests.post(Worker1_IP + '/blkdev')
+                if WorkerOneBlkdev.text=="":
+                    print("Worker1 None.")
+                else:
+                    print("Worker1:\n"+WorkerOneBlkdev.text)
+            except:
+                print("Worker1 None.\n")
+
+            try:
+                WorkerTwoBlkdev = requests.post(Worker2_IP + '/blkdev')
+                if WorkerTwoBlkdev.text=="":
+                    print("Worker2 None.")
+                else:
+                    print("Worker2:\n"+WorkerTwoBlkdev.text)
+            except:
                 print("Worker2 None.\n")
-            else:
-                print("Worker2:\n"+WorkerTwoBlkdev.text+"\n")
-            print("\n")
             
-            if WorkerThreeBlkdev.text=="":
+            try:
+                WorkerThreeBlkdev = requests.post(Worker3_IP + '/blkdev')
+                if WorkerThreeBlkdev.text=="":
+                    print("Worker3 None.")
+                else:
+                    print("Worker3:\n"+WorkerThreeBlkdev.text)
+            except:
                 print("Worker3 None.\n")
-            else:
-                print("Worker3:\n"+WorkerThreeBlkdev.text+"\n")
-            print("\n")
             
         else:
             print("wrong format.\n")

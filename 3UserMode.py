@@ -5,9 +5,9 @@ import json
 import os.path
 from os import path
 
-Worker1_IP = ''
-Worker2_IP = ''
-Worker3_IP = ''
+Worker1_IP = 'http://140.92.152.88:1234'
+Worker2_IP = 'http://140.92.152.61:1234'
+Worker3_IP = 'http://140.92.152.63:1234'
 
 while (1):
     """this while loop can classification 5 mode.
@@ -103,7 +103,7 @@ while (1):
     elif str(mode_chose)==str("2"):
         Read_SpaceName_info = input("The name of the region-info you need to see:")
         if Read_SpaceName_info =="":
-            print("Can't be empty.\n")
+            print("uuid can't be empty.\n")
             pass
         else:
             #try to post json to Worker1 /FindUUID api
