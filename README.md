@@ -10,6 +10,9 @@ Python 3.6.9
     ```shell= 
     pip install Flask
     ```
+    ```shell= 
+    sudo apt-get install python-pip
+    ```
 # User Mode example
 ***running Usermode.py***  
 (a)Create and mount memery(Scanf 0)  
