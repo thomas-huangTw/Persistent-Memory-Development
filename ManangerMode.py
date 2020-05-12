@@ -5,6 +5,7 @@ import json
 import os.path
 from os import path
 
+#Define workers ip address.
 def DefineIp():
     try:
         with open('IpAddress.json', 'r') as f:
@@ -18,6 +19,7 @@ def DefineIp():
 
 def run():
     try:
+        #Define workers ip address.
         Worker1_IP, Worker2_IP, Worker3_IP = DefineIp()
         while(1):
             """this while loop can classification 5 mode.
