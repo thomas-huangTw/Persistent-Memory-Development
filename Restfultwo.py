@@ -9,16 +9,24 @@ app = Flask(__name__)
 
 #Configure local ip
 def Check_Local_IP():
-    LocalIp = get_host_ip()
-    if LocalIp =="":
-         Worker_IP = "Worker1"
-    elif LocalIp =="":
-         Worker_IP = "Worker2"
-    else:
-         Worker_IP = "Worker3"
+    try:
+        with open('IpAddress.json', 'r') as f:
+            JsonData = json.loads(f.read())
+        Worker1_IP = JsonData['worker1']
+        Worker2_IP = JsonData['worker2']
+        Worker3_IP = JsonData['worker3']
 
-    return Worker_IP
+        LocalIp = get_host_ip()
+        if LocalIp == Worker1_IP:
+            Worker_IP = "Worker1"
+        elif LocalIp == Worker2_IP:
+            Worker_IP = "Worker2"
+        else:
+           Worker_IP = "Worker3"
 
+        return Worker_IP
+    except:
+        print("error")
 
 #Use /create function to create pmem block
 @app.route('/create', methods=['GET', 'POST'])
