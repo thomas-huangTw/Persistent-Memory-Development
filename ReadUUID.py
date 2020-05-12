@@ -5,6 +5,7 @@ import socket
 
 def DefineIp():
     try:
+        #Define workers ip address.
         with open('IpAddress.json', 'r') as f:
             JsonData = json.loads(f.read())
         Worker1_IP = JsonData['worker1']
@@ -23,8 +24,8 @@ def run():
         obj = json.loads(data)
         print(obj)
     except OSError as e:
+        #Define workers ip address.
         Worker1_IP, Worker2_IP, Worker3_IP = DefineIp()
-        
         IP = get_host_ip()
         if str(IP) == Worker1_IP:
             print("Worker1. Find Fail.")
