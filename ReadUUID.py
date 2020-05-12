@@ -3,6 +3,17 @@ import subprocess
 import sys
 import socket
 
+def DefineIp():
+    try:
+        with open('IpAddress.json', 'r') as f:
+            JsonData = json.loads(f.read())
+        Worker1_IP = JsonData['worker1']
+        Worker2_IP = JsonData['worker2']
+        Worker3_IP = JsonData['worker3']
+        return Worker1_IP, Worker2_IP, Worker3_IP
+    except:
+        return "IP error."
+
 def run():
     #data[1]:pmem block uuid
     data = sys.argv
@@ -12,10 +23,8 @@ def run():
         obj = json.loads(data)
         print(obj)
     except OSError as e:
-        Worker1_IP = ''
-        Worker2_IP = ''
-        Worker3_IP = ''
-
+        Worker1_IP, Worker2_IP, Worker3_IP = DefineIp()
+        
         IP = get_host_ip()
         if str(IP) == Worker1_IP:
             print("Worker1. Find Fail.")
