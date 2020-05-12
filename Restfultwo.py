@@ -162,9 +162,9 @@ def DeleteUUID():
     CallDeleteFun = subprocess.check_output([Delete_command],shell=True).decode(sys.stdout.encoding)
     if str(CallDeleteFun)=="Success\n":
         
-        #while umount and ndctl destroy-namespace success, also delete the folder in /mnt and uuid json file in /home/thomas/uuidFile/
+        #while umount and ndctl destroy-namespace success, also delete the folder in /mnt and uuid json file in /uuidFile/
         subprocess.call(["rm -r /mnt/" + DeleteUUIDName['UUID']], shell=True)
-        subprocess.call(["rm -r /home/thomas/uuidFile/" + DeleteUUIDName['UUID']+".json"], shell=True)
+        subprocess.call(["rm -r ./uuidFile/" + DeleteUUIDName['UUID']+".json"], shell=True)
         return Worker_IP+". Delete Success."
     else:
         return Worker_IP+". No this UUID."
