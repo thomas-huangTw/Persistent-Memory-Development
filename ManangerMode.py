@@ -177,7 +177,7 @@ def run():
 
             if str(mode_chose)==str("3"):
                 print("Exit!"+"\n")
-                exit(0)
+                break
     except:
         print("error.")
 
