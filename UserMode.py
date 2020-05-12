@@ -256,7 +256,7 @@ def run():
 
             elif str(mode_chose)==str("5"):
                 print("Exit!"+"\n")
-                exit(0)
+                break
 
 
             elif str(mode_chose)==str("D"):
