@@ -10,6 +10,7 @@ Python 3.6.9
     ```
     pip install Flask
     ```  
+# User instructions
 First of all, we will divide users into User Mode and Manager Mode.  
 The User Mode part is used by general user clients. Persistent Memory in User Mode can be stored, deleted, selected, backed up and restored. Among them, the selecting, backup and recovery actions are  corresponds to a single pmem block.  
 The Manager Mode part is used by the general manager client. It can store, delete, and select the Persistent Memory. The action for selecting is the Persistent Memory machine of node Capacity and AvailCapacity.  
